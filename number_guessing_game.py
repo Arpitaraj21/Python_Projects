@@ -6,16 +6,20 @@ def number_guessing_game():
 
     while True:
             
-        userInput = int(input("Guess the number between 1 and 100: "))
+        try:
+            userInput = int(input("Guess the number between 1 and 100: "))
+           
+            if number <  userInput:
+                print("Too high!")
+           
+            elif number > userInput:
+                print("Too low!")
+           
+            else:
+                print("Congratulations! You guessed the number.")
 
-        if number <  userInput:
-            print("Too high!")
-
-        elif number > userInput:
-            print("Too low!")
-
-        else:
-            print("Congratulations! You guessed the number.")
+        except ValueError:
+           print("Please enter a valid number")
 
 
 number_guessing_game()
